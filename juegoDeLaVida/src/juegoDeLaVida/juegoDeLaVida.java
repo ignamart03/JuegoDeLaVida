@@ -7,8 +7,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 /**
- * Clase juegoDeLaVida. Este es un juego de tablero con reglas básicas de matrices con celdas que siguen un patrón.
- * @author Ignacio Martínez Casas
+ * Clase juegoDeLaVida. Este es un juego de tablero con reglas bï¿½sicas de matrices con celdas que siguen un patrï¿½n.
+ * @author Ignacio Martï¿½nez Casas
  *
  */
 public class juegoDeLaVida {
@@ -19,14 +19,14 @@ public class juegoDeLaVida {
 	public static int delay = 250;
 	
 	/**
-	 * Método lectorMatriz para leer el documento de la matriz. Más tarde hace una copia de la misma matriz y la almacena en la variable 'matriz'.
+	 * Mï¿½todo lectorMatriz para leer el documento de la matriz. Mï¿½s tarde hace una copia de la misma matriz y la almacena en la variable 'matriz'.
 	 * @param path
 	 * @throws NumberFormatException
 	 * @throws IOException
 	 */
 	public static void lectorMatriz(String path) throws NumberFormatException, IOException {
 
-		//Iniciamos el FileReader con la ruta indicada próximamente en el main.
+		//Iniciamos el FileReader con la ruta indicada prï¿½ximamente en el main.
 			FileReader fr = new FileReader(path);
 			BufferedReader br = new BufferedReader(fr);
 
@@ -61,14 +61,14 @@ public class juegoDeLaVida {
 
 	}
 	/**
-	 * Método que enseña el tablero con la matriz del principio con ceros (muerta) y unos (viva).
+	 * Mï¿½todo que enseï¿½a el tablero con la matriz del principio con ceros (muerta) y unos (viva).
 	 */
-	public static void enseñarTablero() {
+	public static void enseÃ±arTablero() {
 
 		for (int i = 0; i < dimensionMatriz; i++) {
 			for (int j = 0; j < dimensionMatriz; j++) {
 				if (matriz[i][j] == 1) {
-					System.out.print(" º");
+					System.out.print(" ï¿½");
 				} else {
 					System.out.print(" -");
 				}
@@ -80,7 +80,7 @@ public class juegoDeLaVida {
 	}
 
 	/**
-	 * Método que devuelve el número de células vivas adyacentes a una celda dada.
+	 * Mï¿½todo que devuelve el nï¿½mero de cï¿½lulas vivas adyacentes a una celda dada.
 	 * @param fila
 	 * @param columna
 	 * @return
@@ -131,7 +131,7 @@ public class juegoDeLaVida {
 	static final String SEPARADOR = ",";
 	
 	/**
-	 * Método escribirFichero para sacar el último tablero como fichero .csv
+	 * Mï¿½todo escribirFichero para sacar el ï¿½ltimo tablero como fichero .csv
 	 * @param matriz
 	 * @param finalPath
 	 * @return
@@ -167,7 +167,7 @@ public class juegoDeLaVida {
 		for (int i = 0; i < rondas ; i++) {
 		
 			System.out.println("Ronda" + " " + (i+1));
-			enseñarTablero();
+			enseÃ±arTablero();
 			Thread.sleep(delay);
 			
 			//Corremos la siguiente ronda y la guardamos en 'matriz'.
@@ -184,7 +184,7 @@ public class juegoDeLaVida {
 	}
 	
 	/**
-	 * Método que ejecuta el juego de la vida y avanza rondas automáticamente. Devuelve el último tablero.
+	 * Mï¿½todo que ejecuta el juego de la vida y avanza rondas automï¿½ticamente. Devuelve el ï¿½ltimo tablero.
 	 * @param rondas
 	 * @return
 	 * @throws InterruptedException
@@ -203,7 +203,7 @@ public class juegoDeLaVida {
 					} else {
 						tableroFinal[i][j] = 0;
 					}
-				//Sentencia ºelse en caso de que la celula no este viva.
+				//Sentencia ï¿½else en caso de que la celula no este viva.
 				} else {
 					if (vivasCerca(i, j) == 3) {
 						tableroFinal[i][j] = 1;
